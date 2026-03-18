@@ -183,9 +183,47 @@ a {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     position: relative;
     z-index: 2;
+}
+
+.hero-social-sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 25px;
+    z-index: 10;
+}
+
+.hero-social-sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--white);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-social-sidebar a:hover {
+    background: var(--white);
+    color: var(--primary-purple);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--white);
+}
+
+.hero-social-sidebar a svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Bottom Wave */
@@ -264,6 +302,192 @@ a {
     color: var(--text-muted);
     margin-bottom: 25px;
     min-height: 40px;
+}
+
+/* About Us Section */
+.about-section {
+    padding: 120px 0;
+    background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+    text-align: center;
+    position: relative;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(90, 50, 163, 0.1);
+    color: var(--primary-purple);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 35px;
+    line-height: 1.1;
+}
+
+.about-content {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-lead {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--text-main);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+/* Opportunities Section */
+.opportunities {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+    margin-top: 60px;
+}
+
+.opportunity-item {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.opportunity-item:hover {
+    transform: translateY(-5px);
+}
+
+.opp-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    color: var(--secondary-blue);
+    background: rgba(0, 229, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.opp-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.opp-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.opp-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Advantages Section */
+.advantages {
+    padding: 120px 0;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.advantages-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.advantages-content {
+    flex: 1;
+}
+
+.advantages-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.advantage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.adv-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.adv-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: var(--secondary-blue);
+}
+
+.adv-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.adv-text p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.advantages-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adv-illustration {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));
+    animation: floatIllustration 6s ease-in-out infinite;
+}
+
+@keyframes floatIllustration {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 /* Features Wave Divider */
@@ -535,8 +759,16 @@ a {
         margin-bottom: 25px;
     }
 
-    .hero-image {
+    .hero-social-sidebar {
+        flex-direction: row;
+        padding-left: 0;
         justify-content: center;
+        margin-bottom: 20px; /* Artıq şəklin yuxarısındadır, ona görə aşağıya boşluq veririk */
+        margin-top: 0;
+    }
+
+    .hero-image {
+        align-items: center; /* Mobildə mərkəzləşdiririk */
         width: 100%;
     }
 
@@ -555,9 +787,54 @@ a {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .opportunities {
+        padding: 60px 0;
+    }
+
+    .opportunities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .advantages {
+        padding: 80px 0;
+    }
+
+    .advantages-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .advantages-title {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .adv-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .adv-icon {
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 600px) {
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages-title {
+        font-size: 28px;
+    }
+    
+    .opportunities {
+        padding: 40px 0;
+    }
     .hero-content h1 {
         font-size: 28px;
     }
