@@ -268,46 +268,78 @@ a {
 .programs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .product-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
-.card-image {
+.card-overlay {
+    position: absolute;
+    inset: 0;
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 30px;
+    background: linear-gradient(180deg, 
+        rgba(255,255,255,0.9) 0%, 
+        rgba(255,255,255,0.5) 25%, 
+        rgba(255,255,255,0) 45%, 
+        rgba(0,0,0,0) 65%, 
+        rgba(0,0,0,0.4) 85%, 
+        rgba(0,0,0,0.7) 100%);
+    text-align: center;
 }
 
-.product-card h3 {
-    font-size: 22px;
-    color: var(--dark-purple);
-    margin-bottom: 10px;
+.card-title-green {
+    font-size: 38px;
+    font-weight: 800;
+    color: #2d6a4f;
+    margin-bottom: 12px;
 }
 
-.product-card p {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 25px;
-    min-height: 40px;
+.card-subtitle {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.btn-green {
+    background: #2d6a4f;
+    color: #ffffff;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-green:hover {
+    background: #1b4332;
+    transform: scale(1.05);
 }
 
 /* About Us Section */
 .about-section {
     padding: 120px 0;
-    background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+    background: radial-gradient(circle at center, #fdfaff 0%, #f7f1ff 100%);
     text-align: center;
     position: relative;
 }
@@ -415,7 +447,7 @@ a {
 /* Advantages Section */
 .advantages {
     padding: 120px 0;
-    background-color: var(--primary-purple);
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     color: var(--white);
     overflow: hidden;
 }
@@ -436,6 +468,7 @@ a {
     margin-bottom: 50px;
     letter-spacing: 2px;
     text-align: left;
+    color: var(--white);
 }
 
 .advantage-list {
@@ -466,7 +499,7 @@ a {
 
 .adv-text p {
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
 }
 
@@ -477,17 +510,19 @@ a {
     align-items: center;
 }
 
-.adv-illustration {
+.adv-dashboard-img {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));
-    animation: floatIllustration 6s ease-in-out infinite;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes floatIllustration {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+.adv-dashboard-img:hover {
+    transform: translateY(-10px) scale(1.02) rotateX(2deg);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
 }
 
 /* Features Wave Divider */
