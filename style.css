@@ -100,10 +100,21 @@ a {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     color: var(--white);
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.logo small {
+    font-size: 10px;
+    text-transform: lowercase;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-weight: 500;
 }
 
 .nav-links {
@@ -118,7 +129,8 @@ a {
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--white);
     font-weight: 600;
 }
@@ -272,19 +284,19 @@ a {
 }
 
 .product-card {
-    height: 700px;
+    height: 800px;
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
 }
 
 .card-overlay {
@@ -293,22 +305,22 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px 30px;
-    background: linear-gradient(180deg, 
-        rgba(255,255,255,0.9) 0%, 
-        rgba(255,255,255,0.5) 25%, 
-        rgba(255,255,255,0) 45%, 
-        rgba(0,0,0,0) 65%, 
-        rgba(0,0,0,0.4) 85%, 
-        rgba(0,0,0,0.7) 100%);
+    padding: 50px 30px;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.8) 15%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(0, 0, 0, 0) 60%,
+            rgba(0, 0, 0, 0.4) 80%,
+            rgba(0, 0, 0, 0.7) 100%);
     text-align: center;
 }
 
 .card-title-green {
-    font-size: 38px;
+    font-size: 42px;
     font-weight: 800;
     color: #2d6a4f;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .card-subtitle {
@@ -316,24 +328,28 @@ a {
     color: #444;
     line-height: 1.4;
     font-weight: 600;
+    max-width: 260px;
+    margin: 10px auto 0;
 }
 
 .btn-green {
     background: #2d6a4f;
     color: #ffffff;
-    padding: 12px 35px;
-    border-radius: 8px;
+    padding: 14px 40px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 16px;
     display: inline-block;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     border: none;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .btn-green:hover {
     background: #1b4332;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 106, 79, 0.4);
 }
 
 /* About Us Section */
@@ -515,14 +531,14 @@ a {
     max-width: 600px;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .adv-dashboard-img:hover {
     transform: translateY(-10px) scale(1.02) rotateX(2deg);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
 }
 
 /* Features Wave Divider */
@@ -596,7 +612,8 @@ a {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 60px;
-    align-items: stretch; /* Form ve kartin hundurleyin eynilesdirir */
+    align-items: stretch;
+    /* Form ve kartin hundurleyin eynilesdirir */
 }
 
 .contact-header {
@@ -686,7 +703,8 @@ a {
     padding: 10px;
     background: #f1f5f9;
     border-radius: 12px;
-    box-sizing: content-box; /* Ikonun etrafina padding elave etmek ucun */
+    box-sizing: content-box;
+    /* Ikonun etrafina padding elave etmek ucun */
 }
 
 .social-links {
@@ -753,8 +771,9 @@ a {
         gap: 30px;
         transition: 0.4s;
         z-index: 1000;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        display: flex; /* Override display: none if any */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        /* Override display: none if any */
     }
 
     .nav-links.active {
@@ -766,7 +785,8 @@ a {
     }
 
     .nav-actions {
-        display: none; /* Hide actions on small mobile or reposition */
+        display: none;
+        /* Hide actions on small mobile or reposition */
     }
 
     .hero {
@@ -798,12 +818,14 @@ a {
         flex-direction: row;
         padding-left: 0;
         justify-content: center;
-        margin-bottom: 20px; /* Artıq şəklin yuxarısındadır, ona görə aşağıya boşluq veririk */
+        margin-bottom: 20px;
+        /* Artıq şəklin yuxarısındadır, ona görə aşağıya boşluq veririk */
         margin-top: 0;
     }
 
     .hero-image {
-        align-items: center; /* Mobildə mərkəzləşdiririk */
+        align-items: center;
+        /* Mobildə mərkəzləşdiririk */
         width: 100%;
     }
 
@@ -866,14 +888,15 @@ a {
     .advantages-title {
         font-size: 28px;
     }
-    
+
     .opportunities {
         padding: 40px 0;
     }
+
     .hero-content h1 {
         font-size: 28px;
     }
-    
+
     .nav-container {
         padding: 0 20px;
     }
