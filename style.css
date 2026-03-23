@@ -792,27 +792,40 @@ a {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 60px;
-        padding-bottom: 80px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 28px;
         line-height: 1.2;
+        margin-bottom: 10px;
     }
 
     .hero-content p {
         font-size: 16px;
+        margin-bottom: 15px;
     }
 
     .hero-content {
-        margin-bottom: 50px;
-    }
+    margin-bottom: 30px;
+}
 
-    .hero-services-bar {
-        justify-content: center;
-        margin-bottom: 25px;
-    }
+.hero-services-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-services-bar svg {
+    width: 28px;
+    height: 28px;
+}
+
+.service-icon-item span {
+    font-size: 9px;
+}
 
     .hero-social-sidebar {
         flex-direction: row;
